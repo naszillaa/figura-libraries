@@ -1,5 +1,5 @@
-local lib = {}
-local tails = {} ---@type auria.trail_tail[]
+local lib = 
+local trailTail = require('trail_tail')
 ---@alias auria.trail_tail.config {stiff: number, bounce: number, floorFriction: number, gravity: Vector3, maxDist: number, maxAngle: number, partToWorldDelay: number, physicsStrength: number, collisionOffsets: Vector3[]}
 ---@class auria.trail_tail
 ---@field startPos Vector3
@@ -28,7 +28,7 @@ end
 ---@param tailModel ModelPart|ModelPart[] # all modelparts will be parented to world
 ---@return auria.trail_tail
 function lib.new(tailModel)
-   local tail = {}
+   local tail = trailTail.new(models.nas.tail_model_path)
    tail.config = {
       bounce = 0.8,
       stiff = 0.5,
